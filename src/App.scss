@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+body, .App{
+  height: 100vh;
+  width: 100%;
+  margin: 0px;
+  background: linear-gradient(to top, #7A5B6E, #423551);
+  color: white;
+  font-family: 'Montserrat';
+  user-select: none;
+  overflow: hidden;
+}
+
+
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .slider{
+    display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+    max-width: 100%;
+    padding: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      height: 8px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0);
+    }
+    &::-webkit-scrollbar-thumb{
+      background-color: rgba(255, 255, 255, 0.699);
+      border-radius: 10px;
+    }
+  }
+  .footer{
+    position: absolute;
+    bottom: 2px;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0px;
+    animation: fadeIn ease-in 1s forwards;
+    img{
+      width: 15px;
+      vertical-align: middle;
+    }
+    a{
+      color: #E57873;
+      text-decoration: none;
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.alert{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 177, 177, 0.116);
+  border-radius: 4px;
+  height: 40px;
+  opacity: 0%;
+  img{
+    width: 24px;
+    height: 24px;
+    padding: 0px 10px;
+    user-select: none;
+    &:last-of-type{
+      transition: all 0.5s ease;
+      opacity: 60%;
+      &:hover{
+        opacity: 100%;
+      }
+    }
+  }
+  p{
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0px;
+  }
+}
+
+.fade-in{
+  animation: fadeIn ease-in 1s forwards;
+  .img{
+    &:last-of-type{
+      cursor: pointer;
+    }
+  }
+}
+.fade-out{
+  animation: fadeOut ease-in 1s forwards;
+}
+
+
+
+
+
+
+
+
+@keyframes fadeIn{
+  from{
+    opacity: 0%;
+  }
+  to{
+    opacity: 100%;
+  }
+}
+@keyframes fadeOut{
+  from{
+    opacity: 100%;
+  }
+  to{
+    opacity: 0%;
+  }
+}

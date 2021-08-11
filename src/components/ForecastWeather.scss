@@ -1,0 +1,16 @@
+.weather-wrap{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+    align-items: center;
+    h3{
+        font-size: 15px;
+        font-weight: 500;
+        margin: 10px 0px;
+    }
+    img{
+        width: 35px;
+        height: 35px;
+        user-select: none;
+    }
+}

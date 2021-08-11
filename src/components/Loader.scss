@@ -1,0 +1,35 @@
+.Loader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        font-weight: 300;
+        font-size: 18px;
+        margin: 0px;
+        span:first-of-type{
+            animation: .4s ease-in 0s infinite alternate fadeIn;
+        }
+        span{
+            animation: .4s ease-in .2s infinite alternate fadeIn;
+        }
+        span:last-of-type{
+            animation: .4s ease-in .4s infinite alternate fadeIn;
+        }
+    }
+    img{
+        margin-bottom: 20px;
+        width: 80px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+    }
+    50% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
