@@ -51,7 +51,6 @@ export default function Weather(props) {
         function fetchData(where){
             axios('https://api.weatherapi.com/v1/forecast.json?key=' + apiKey + '&q='+ where +'&days=2&alerts=yes&lang='+ params.lang)
             .then(res =>{
-                console.log(res.data)
                 setWeather(res.data)
                 setDayCycle(res.data.current.is_day)
             })
