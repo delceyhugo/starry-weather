@@ -22,14 +22,14 @@ export default function Weather(props) {
         ['--day-cycle-sun-size','50px'],
         ['--day-cycle-sun-box','0 0 50px 0px #fff, 0 0 100px 0px #ff0'],
     ]
-    const nighCssProperty = [
+    const nightCssProperty = [
         ['--day-cycle','#31253B'],
         ['--day-cycle-bg','linear-gradient(to top, #200E3B, #313366, #200E3B)'],
         ['--day-cycle-sun','#E57873'],
         ['--day-cycle-sun-size','75px'],
         ['--day-cycle-sun-box','0 0 80px 0px #fff, 0 0 200px 0px #f0f'],
     ]    
-    const nightCssProperty = [
+    const nighCssProperty = [
         ['--day-cycle','#4F425D'],
         ['--day-cycle-bg','linear-gradient(to top, #846279, #E29BAA, #846279)'],
         ['--day-cycle-sun','#FFFDF4'],

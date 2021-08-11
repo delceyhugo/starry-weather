@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import ReactGA from 'react-ga'
 import './App.scss'
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import Weather from './components/Weather'
 import LocationInput from './components/LocationInput';
 import Loader from './components/Loader';
+import Alert from './components/Alert'
 
 export default function App() {
   const [loader, setLoader] = useState(true)
@@ -11,6 +13,8 @@ export default function App() {
   const [allCity, setAllCity] = useState([])
   const [alert, setAlert] = useState()
   useEffect(() =>{
+    ReactGA.initialize('G-S75JB5D6QL')
+    ReactGA.pageview(window.location.pathname + window.location.search)
     document.title='Starry Weather'
     setTimeout(() =>{
       setLoader(false)
@@ -39,7 +43,10 @@ export default function App() {
         <Switch>
           <Route path="/" exact>
             <div className='slider'>
-              <LocationInput onChange={handleLocation} alert={alert}/>
+              <div className='flex-col'>
+                <LocationInput onChange={handleLocation} alert={alert} handleAlert={handleAlert}/>
+                <Alert alert={alert} handleAlert={handleAlert}/>
+              </div>
               <Weather coords={userLocation ? userLocation : undefined} handleAlert={handleAlert} />
               {allCity.map((el, index)=>(
                 <Weather key={index} city={el} handleAlert={handleAlert} /> 

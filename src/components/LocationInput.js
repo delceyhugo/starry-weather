@@ -1,6 +1,5 @@
 import React, {useState } from 'react'
 import './LocationInput.scss'
-import Alert from './Alert'
 
 export default function LocationInput(props) {
     const [city, setCity] = useState('')
@@ -19,7 +18,6 @@ export default function LocationInput(props) {
                 <label htmlFor="city">🠗 City 🠗</label>
                 <input value={city} onChange={e => setCity(e.target.value)} name="city" type="text" autoComplete="off"/>
             </form>
-            <Alert alert={props.alert}/>
         </div>
     )
 }
