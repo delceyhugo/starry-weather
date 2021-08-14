@@ -15,9 +15,6 @@ export default function App() {
   useEffect(() =>{
     ReactGA.initialize('G-S75JB5D6QL')
     ReactGA.pageview(window.location.pathname + window.location.search)
-    if(navigator.userAgent.match(/(android|iphone)/gi)){
-      window.screen.orientation.lock("portrait");
-    }
     document.title='Starry Weather'
     setTimeout(() =>{
       setLoader(false)
