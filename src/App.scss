@@ -11,6 +11,7 @@ body, .App{
 }
 
 
+
 .App{
   display: flex;
   flex-direction: column;
@@ -21,7 +22,7 @@ body, .App{
     flex-direction: row;
     flex-basis: auto;
     max-width: 100%;
-    padding: 20px;
+    padding: 20px 0px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
@@ -52,6 +53,11 @@ body, .App{
       text-decoration: none;
     }
 
+  }
+}
+@media screen and (max-height: 800px){
+  .footer{
+      display: none;
   }
 }
 
@@ -147,4 +153,173 @@ body, .App{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.day{background: linear-gradient(45deg, #E3E3C3, #AED2C6, #58B8CC);
+  .sun{
+    width: 50px;
+    height: 50px;
+    background-color: #FFEFCC;
+    box-shadow: 0 0 50px 0px #fff, 0 0 100px 0px #ff0;
+  }
+  #mount{fill: #D29558;}
+  .footer-content{background-color: #D29558;}
+}
+
+.night{background: linear-gradient(to top, #846279, #E29BAA, #846279);
+  .sun{
+    width: 50px;
+    height: 50px;
+    background: #FFFDF4;
+    box-shadow: 0 0 50px 0px #fff, 0 0 100px 0px #ff0;
+  }
+  #mount{fill: #4F425D;}
+  .footer-content{background-color: #4F425D;}
+}
+
+.fullmoon{background: linear-gradient(to top, #200E3B, #313366, #200E3B);
+  .sun{
+    width: 65px;
+    height: 65px;
+    background: #E57873;
+    box-shadow: 0 0 80px 0px #fff, 0 0 200px 0px #f0f;
+  }
+  #mount{fill: #31253B;}
+  .footer-content{background-color: #31253B;}
+}
+.litecloudy{
+  .clouds{
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 150px;
+    .cloud{
+      opacity: 60%;
+      position: absolute;
+      width: 100%;
+      height: 150px;
+    }
+    .cloud1{
+      background: center no-repeat url('./components/img/cloud1.png');
+      animation: animatedBackground 120s linear infinite;
+    }
+    .cloud2{
+      background: center no-repeat url('./components/img/cloud2.png');
+      animation: animatedBackground 80s linear infinite;
+    }
+    .cloud3{
+      background: center no-repeat url('./components/img/cloud3.png');
+      animation: animatedBackground 140s linear infinite;
+    }
+  }
+}
+.overcast{
+  .clouds{
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 150px;
+    .cloud{
+      position: absolute;
+      width: 100%;
+      height: 150px;
+      background-size: contain !important;
+    }
+    .cloud1{
+        background: center no-repeat url('./components/img/cloud1.png');
+        animation: animatedBackground 80s linear infinite;
+    }
+    .cloud2{
+        background: center no-repeat url('./components/img/cloud2.png');
+        animation: animatedBackground 100s linear infinite;
+    }
+    .cloud3{
+      background: center no-repeat url('./components/img/cloud3.png');
+      animation: animatedBackground 120s linear infinite;
+    }
+    .cloud4{
+      background: center no-repeat url('./components/img/cloud4.png');
+      animation: animatedBackground 140s linear infinite;
+    }
+    .cloud5{
+      background: center no-repeat url('./components/img/cloud5.png');
+      animation: animatedBackground 160s linear infinite;
+    }
+    .cloud6{
+      background: center no-repeat url('./components/img/cloud6.png');
+      animation: animatedBackground 180s linear infinite;
+    }
+    .cloud7{
+      background: center no-repeat url('./components/img/cloud7.png');
+      animation: animatedBackground 200s linear infinite;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes animatedBackground {
+  from {
+    transform: translate(-400px, 0px);
+  }
+  to {
+    transform: translate(400px, 0px);
+  }
 }

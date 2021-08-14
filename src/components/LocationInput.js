@@ -15,7 +15,7 @@ export default function LocationInput(props) {
     return (
         <div className='wrapper-input'>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="city">🠗 City 🠗</label>
+                <label htmlFor="city">City</label>
                 <input value={city} onChange={e => setCity(e.target.value)} name="city" type="text" autoComplete="off"/>
             </form>
         </div>

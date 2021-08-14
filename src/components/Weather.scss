@@ -1,21 +1,18 @@
 .Weather{
     display: flex;
-    min-width: 400px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     margin: 25px 15px;
     animation: fadeIn ease-in 1s forwards;
     border-radius: 10px;
-    background: var(--day-cycle-bg);
     zoom: 1.2;
     .card{
+        width: 400px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        flex-basis: 400px;
-        height: 600px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
         border-radius: 10px;
         overflow: hidden;
@@ -63,6 +60,13 @@
             }
         }
         .middle{
+            display: flex;
+            position: relative;
+            width: 100%;
+            flex-direction: row;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
             .sun-viewbox{
                 display: flex;
                 flex-direction: row;
@@ -73,39 +77,33 @@
                 .sun{
                     bottom: 0px;
                     z-index: 0;
-                    width: var(--day-cycle-sun-size);
-                    height: var(--day-cycle-sun-size);
-                    background-color: var(--day-cycle-sun);
                     margin-bottom: 0px;
                     border-radius: 50%;
-                    box-shadow: var(--day-cycle-sun-box);
                 }
             }
         }
         .bot{
             width: 100%;
             height: 100%;
-            display: contents;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             svg{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 width: 110%;
-                margin-bottom: -30px;
-                z-index: 1;
-                #mount{fill: var(--day-cycle);}
+                z-index: 2;
                 .cls-1{fill:none;}.cls-2{fill:url(#Dégradé_sans_nom_13);}.cls-3{fill:url(#Dégradé_sans_nom_13-2);}.cls-4{fill:url(#Dégradé_sans_nom_13-3);}.cls-5{fill:url(#Dégradé_sans_nom_13-4);}.cls-6{fill:url(#Dégradé_sans_nom_13-5);}
             }
             .footer-content{
                 display: flex;
-                flex-wrap: wrap;
+                width: 90%;
+                height: 150px;
                 align-content: center;
                 flex-direction: column;
-                width: 360px;
-                height: 150px;
-                padding: 0px 20px;
+                padding: 0 5% 2% 5%;
                 z-index: 2;
-                background-color: var(--day-cycle);
                 .top{
                     display: flex;
                     flex-direction: row;
@@ -149,11 +147,25 @@
                         transition: all 0.5s ease;
                     }
                     .tab-temp{
+                        width: 100%;
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
                         overflow: scroll;
                         transition: all 0.5s ease;
+                        &::-webkit-scrollbar{
+                            display: none;
+                        }
+                    }
+                    .tab-stat{
+                        width: 100%;
+                        &::-webkit-scrollbar{
+                            display: none;
+                        }
+
+                    }
+                    .tab-settings{
+                        width: 100%;
                         &::-webkit-scrollbar{
                             display: none;
                         }
@@ -218,5 +230,15 @@
     }
     to {
       opacity: 1;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 425px) and (orientation: portrait){
+    .card{
+        width: 100vw !important;
     }
 }

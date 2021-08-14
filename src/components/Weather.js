@@ -9,33 +9,13 @@ import Loader from './Loader';
 
 export default function Weather(props) {
     const componentEl = useRef(null);
+    const cardEl = useRef(null);
     const [mounted, setMounted] = useState(true)
     const [toggleTabs, setToggleTabs] = useState(1)
     const [weather, setWeather] = useState()
     const [apiKey, setApiKey] = useState()
-    const [dayCycle, setDayCycle] = useState()
+    // const [dayCycle, setDayCycle] = useState()
     const [params, setParams] = useState({lang:'en',temp:'c',speed:'kph',pressure:'mb'})
-    const dayCssProperty = [
-        ['--day-cycle','#D29558'],
-        ['--day-cycle-bg','linear-gradient(45deg, #E3E3C3, #AED2C6, #58B8CC)'],
-        ['--day-cycle-sun','#FFEFCC'],
-        ['--day-cycle-sun-size','50px'],
-        ['--day-cycle-sun-box','0 0 50px 0px #fff, 0 0 100px 0px #ff0'],
-    ]
-    const nightCssProperty = [
-        ['--day-cycle','#31253B'],
-        ['--day-cycle-bg','linear-gradient(to top, #200E3B, #313366, #200E3B)'],
-        ['--day-cycle-sun','#E57873'],
-        ['--day-cycle-sun-size','75px'],
-        ['--day-cycle-sun-box','0 0 80px 0px #fff, 0 0 200px 0px #f0f'],
-    ]    
-    const nighCssProperty = [
-        ['--day-cycle','#4F425D'],
-        ['--day-cycle-bg','linear-gradient(to top, #846279, #E29BAA, #846279)'],
-        ['--day-cycle-sun','#FFFDF4'],
-        ['--day-cycle-sun-size','50px'],
-        // ['--day-cycle-sun-box','0 0 80px 0px #fff, 0 0 200px 0px #f0f'],
-    ]
     // Comp => Mount || Update
     useEffect(() => {
         setApiKey('9fc431d6956447d08eb223147210108')
@@ -51,15 +31,15 @@ export default function Weather(props) {
         function fetchData(where){
             axios('https://api.weatherapi.com/v1/forecast.json?key=' + apiKey + '&q='+ where +'&days=2&alerts=yes&lang='+ params.lang)
             .then(res =>{
+                console.log(res.data)
                 setWeather(res.data)
-                setDayCycle(res.data.current.is_day)
+                handleCssEffect(res.data.current.condition.code, res.data.current.is_day, res.data.forecast.forecastday[0].astro.moon_phase)
             })
             .catch(error =>{
                 if (error.response) {
                     props.handleAlert(error.response.data.error.message)
                 }
                 setMounted(false)
-                // 
             })
         }
     }, [props, apiKey, params, mounted])
@@ -74,30 +54,40 @@ export default function Weather(props) {
     function handleSettings(params){
         setParams(params)
     }
-
-    if(componentEl !== undefined && mounted === true){
-        function handleCssVariable(el){
-        componentEl.current.style.setProperty(el[0],el[1]);
+    function handleCssEffect(code, day, moon_phase){
+        console.log('allo')
+        if(moon_phase !== 'Fullmoon'){
+            switch (day) {
+                case 1:
+                    cardEl.current.classList.add('day')
+                    break;
+                case 0:
+                    cardEl.current.classList.add('night')
+                    break;
+                default:
+                    break;
+            }
         }
-        if(dayCycle === 1){
-            dayCssProperty.map(el =>(
-                handleCssVariable(el)
-            ))
-        }else if(dayCycle === 0){
-            nightCssProperty.map(el => (
-                handleCssVariable(el)
-            ))
+        else{
+            cardEl.current.classList.add('fullmoon')
+        }
+        switch (code) {
+            case 1003 || 1006 || 1063 || 1066 || 1069 || 1072 || 1087 || 1114:
+                cardEl.current.classList.add('litecloudy')
+                break;
+            case 1009 || 1117 :
+                cardEl.current.classList.add('overcast')
+                break;
+            default:
+                break;
         }
     }
-
-
-
 
     return (
         <>{mounted && 
             <div className='Weather' ref={componentEl}>
                 {weather ?
-                <div className='card'>
+                <div className='card'ref={cardEl}>
                     <div className='top'>
                         <img onClick={closeComponent} className='close-component' src="https://img.icons8.com/windows/64/ffffff/macos-close.png" alt='close component'/>
                         <h3>{weather ? weather.location.name : 'Unknown'}</h3>
@@ -109,6 +99,15 @@ export default function Weather(props) {
                         </p>
                     </div>
                     <div className='middle'>
+                        <div className='clouds'>
+                            <div className='cloud cloud1'></div>
+                            <div className='cloud cloud2'></div>
+                            <div className='cloud cloud3'></div>
+                            <div className='cloud cloud4'></div>
+                            <div className='cloud cloud5'></div>
+                            <div className='cloud cloud6'></div>
+                            <div className='cloud cloud7'></div>
+                        </div>
                         <div className='sun-viewbox'>
                             <div className='sun'></div>
                         </div>
