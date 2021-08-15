@@ -4,7 +4,7 @@ import './LocationInput.scss'
 export default function LocationInput(props) {
     const [city, setCity] = useState('')
 
-
+    // Handle data from input to parent
     const handleSubmit = (e) => {
         e.preventDefault();
         if(city !== ''){

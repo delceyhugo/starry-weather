@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react'
-import axios from 'axios'
 import './Weather.scss'
+// Import Axios for API call
+import axios from 'axios'
+// Import Components
 import ForecastWeatherDay from './ForecastWeatherDay'
 import ForecastWeatherHour from './ForecastWeatherHour'
 import Average from './Average';
@@ -14,11 +16,13 @@ export default function Weather(props) {
     const [toggleTabs, setToggleTabs] = useState(1)
     const [weather, setWeather] = useState()
     const [apiKey, setApiKey] = useState()
-    // const [dayCycle, setDayCycle] = useState()
     const [params, setParams] = useState({lang:'en',temp:'c',speed:'kph',pressure:'mb'})
-    // Comp => Mount || Update
+
     useEffect(() => {
+        // Set Api key
         setApiKey('9fc431d6956447d08eb223147210108')
+
+        // Fetch data if api is defined and component is mount
         if(apiKey !== undefined && mounted === true){
             if(props.city !== undefined){
                 fetchData(props.city)
@@ -27,11 +31,12 @@ export default function Weather(props) {
                 fetchData(props.coords.lat + ',' + props.coords.lng)
             }
         }
-        // Get Forecast and Current weather
+
+        // Fetch Forecast and Current weather
         function fetchData(where){
             axios('https://api.weatherapi.com/v1/forecast.json?key=' + apiKey + '&q='+ where +'&days=2&alerts=yes&lang='+ params.lang)
             .then(res =>{
-                console.log(res.data)
+                // console.log(res.data)
                 setWeather(res.data)
                 handleCssEffect(res.data.current.condition.code, res.data.current.is_day, res.data.forecast.forecastday[0].astro.moon_phase)
             })
@@ -44,16 +49,22 @@ export default function Weather(props) {
         }
     }, [props, apiKey, params, mounted])
 
-
+    // Handle display of footer tabs
     const toggleTab = (index) =>{
         setToggleTabs(index)
     }
+    
+    // Handle display of component and if he mounted or not
     function closeComponent() {
         setMounted(false)
     }
+    
+    // Handle component settings from <Settings/>
     function handleSettings(params){
         setParams(params)
     }
+
+    // Handle Css style and effect (like 'Sunny' or 'Cloudy') and apply a corresponding class
     function handleCssEffect(code, day, moon_phase){
         console.log('allo')
         if(moon_phase !== 'Fullmoon'){

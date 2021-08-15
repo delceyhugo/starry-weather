@@ -5,6 +5,7 @@ import './ForecastWeather.scss'
 export default function ForecastWeatherDay(props) {
     const [sortedData, setSortedData] = useState()
     useEffect(() => {
+        // Handle organization of forecast weather by hours
         function sortingData(el){
             let sortedData = []
             if(el.localTime <= (23 - props.num)){

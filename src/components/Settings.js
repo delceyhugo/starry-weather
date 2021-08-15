@@ -3,6 +3,8 @@ import './Settings.scss'
 
 export default function Settings(props) {
     const [toggleTabs, setToggleTabs] = useState({lang:'en',temp:'c',speed:'kph',pressure:'mb'})
+
+    // Handle display of selected settings
     const toggleTab = (type, value) =>{
         switch (type) {
             case 'lang':
@@ -25,10 +27,10 @@ export default function Settings(props) {
                 break
         }
     }
-    function handleSettings(event){
-        console.log(event)
-    }
 
+
+
+    
     return (
         <div className='settings-wrap'>
             <div className='left'>
@@ -43,28 +45,28 @@ export default function Settings(props) {
             <div className='right'>
                 <ul>
                     <li>
-                        <img onClick={() =>{toggleTab('lang','en')}} onChange={handleSettings} className={toggleTabs.lang === 'en' ? 'active' : null} src="https://img.icons8.com/dusk/64/000000/usa.png" alt='en'/>
+                        <img onClick={() =>{toggleTab('lang','en')}} className={toggleTabs.lang === 'en' ? 'active' : null} src="https://img.icons8.com/dusk/64/000000/usa.png" alt='en'/>
                         <span> / </span>
-                        <img onClick={() =>{toggleTab('lang','fr')}} onChange={handleSettings} className={toggleTabs.lang === 'fr' ? 'active' : null} src="https://img.icons8.com/dusk/64/000000/france.png" alt='fr'/>
+                        <img onClick={() =>{toggleTab('lang','fr')}} className={toggleTabs.lang === 'fr' ? 'active' : null} src="https://img.icons8.com/dusk/64/000000/france.png" alt='fr'/>
                         <span> / </span>
-                        <img  onClick={() =>{toggleTab('lang','es')}} onChange={handleSettings} className={toggleTabs.lang === 'es' ? 'active' : null} src="https://img.icons8.com/dusk/64/000000/spain.png" alt='es'/>
+                        <img  onClick={() =>{toggleTab('lang','es')}} className={toggleTabs.lang === 'es' ? 'active' : null} src="https://img.icons8.com/dusk/64/000000/spain.png" alt='es'/>
                         <span> / </span>
-                        <img  onClick={() =>{toggleTab('lang','de')}} onChange={handleSettings} className={toggleTabs.lang === 'de' ? 'active' : null} src="https://img.icons8.com/dusk/64/000000/germany.png" alt='ge'/>
+                        <img  onClick={() =>{toggleTab('lang','de')}} className={toggleTabs.lang === 'de' ? 'active' : null} src="https://img.icons8.com/dusk/64/000000/germany.png" alt='ge'/>
                     </li>
                     <li>
-                        <span onClick={() =>{toggleTab('temp','c')}} onChange={handleSettings} className={toggleTabs.temp === 'c' ? 'active' : null}> Celcius</span>
+                        <span onClick={() =>{toggleTab('temp','c')}} className={toggleTabs.temp === 'c' ? 'active' : null}> Celcius</span>
                         <span> /</span>
-                        <span onClick={() =>{toggleTab('temp','f')}} onChange={handleSettings} className={toggleTabs.temp === 'f' ? 'active' : null}> Fahrenheit</span>
+                        <span onClick={() =>{toggleTab('temp','f')}} className={toggleTabs.temp === 'f' ? 'active' : null}> Fahrenheit</span>
                     </li>
                     <li>
-                        <span onClick={() =>{toggleTab('speed','kph')}} onChange={handleSettings} className={toggleTabs.speed === 'kph' ? 'active' : null}> Km/h</span>
+                        <span onClick={() =>{toggleTab('speed','kph')}} className={toggleTabs.speed === 'kph' ? 'active' : null}> Km/h</span>
                         <span> /</span>
-                        <span onClick={() =>{toggleTab('speed','mph')}} onChange={handleSettings} className={toggleTabs.speed === 'mph' ? 'active' : null}> Mph</span>
+                        <span onClick={() =>{toggleTab('speed','mph')}} className={toggleTabs.speed === 'mph' ? 'active' : null}> Mph</span>
                     </li>
                     <li>
-                        <span onClick={() =>{toggleTab('pressure','mb')}} onChange={handleSettings} className={toggleTabs.pressure === 'mb' ? 'active' : null}> Millibars</span>
+                        <span onClick={() =>{toggleTab('pressure','mb')}} className={toggleTabs.pressure === 'mb' ? 'active' : null}> Millibars</span>
                         <span> /</span>
-                        <span onClick={() =>{toggleTab('pressure','in')}} onChange={handleSettings} className={toggleTabs.pressure === 'in' ? 'active' : null}> Inches</span>
+                        <span onClick={() =>{toggleTab('pressure','in')}} className={toggleTabs.pressure === 'in' ? 'active' : null}> Inches</span>
                     </li>
                     <li>
                         <span><a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></span>

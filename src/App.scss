@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 body, .App{
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   margin: 0px;
   background: linear-gradient(to top, #7A5B6E, #423551);
   color: white;
@@ -22,7 +22,7 @@ body, .App{
     flex-direction: row;
     flex-basis: auto;
     max-width: 100%;
-    padding: 20px 0px;
+    padding: 20px 50px 20px 0px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
@@ -58,6 +58,21 @@ body, .App{
 @media screen and (max-height: 800px){
   .footer{
       display: none;
+  }
+}
+@media screen and (max-height: 800px){
+  .Weather, .wrapper-input{
+    zoom: 1 !important;
+  }
+}
+@media screen and (max-height: 650px){
+  .Weather, .wrapper-input{
+    zoom: 0.8 !important;
+  }
+}
+@media screen and (max-height: 500px){
+  .Weather, .wrapper-input{
+    zoom: 0.6 !important;
   }
 }
 
