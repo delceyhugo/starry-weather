@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.59920953.chunk.css",
-    "main.js": "/static/js/main.9d21d720.chunk.js",
-    "main.js.map": "/static/js/main.9d21d720.chunk.js.map",
+    "main.css": "/static/css/main.52aedb78.chunk.css",
+    "main.js": "/static/js/main.22e88e7f.chunk.js",
+    "main.js.map": "/static/js/main.22e88e7f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.5167072c.js",
     "runtime-main.js.map": "/static/js/runtime-main.5167072c.js.map",
     "static/js/2.6ca5c1e4.chunk.js": "/static/js/2.6ca5c1e4.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.68092765.chunk.js": "/static/js/3.68092765.chunk.js",
     "static/js/3.68092765.chunk.js.map": "/static/js/3.68092765.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.59920953.chunk.css.map": "/static/css/main.59920953.chunk.css.map",
+    "static/css/main.52aedb78.chunk.css.map": "/static/css/main.52aedb78.chunk.css.map",
     "static/js/2.6ca5c1e4.chunk.js.LICENSE.txt": "/static/js/2.6ca5c1e4.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/static/media/cloud7.9131c3bd.png"
   },
   "entrypoints": [
     "static/js/runtime-main.5167072c.js",
     "static/js/2.6ca5c1e4.chunk.js",
-    "static/css/main.59920953.chunk.css",
-    "static/js/main.9d21d720.chunk.js"
+    "static/css/main.52aedb78.chunk.css",
+    "static/js/main.22e88e7f.chunk.js"
   ]
 }

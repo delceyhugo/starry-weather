@@ -66,7 +66,6 @@ export default function Weather(props) {
 
     // Handle Css style and effect (like 'Sunny' or 'Cloudy') and apply a corresponding class
     function handleCssEffect(code, day, moon_phase){
-        console.log('allo')
         if(moon_phase !== 'Fullmoon'){
             switch (day) {
                 case 1:
