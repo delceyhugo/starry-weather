@@ -1,4 +1,3 @@
-**
 ## Starry Weather
 App météo simple, développé a des fins d'apprentissage !
 Utilisation de React (en composants fonctionnels et avec React Router),  de [WeatherAPI](https://www.weatherapi.com) pour les données météo (fetch avec [axios](https://github.com/axios/axios)).
