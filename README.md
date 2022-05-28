@@ -4,3 +4,5 @@ Utilisation de React (en composants fonctionnels et avec React Router),  de [Wea
 Pour le design, j'ai utilisé le concept de [Marina Matijaca](https://dribbble.com/Marina_Matijaca) disponible [ici](https://dribbble.com/shots/2332668-Lonely-Mountain-Weather-Concept), j'ai essayé d'être le plus fidèle possible au concept.  
   
 Version en live dispo **[ici](https://starryweather.delceyhugo.dev)**
+  
+![Exemple](https://github.com/delceyhugo/starry-weather/blob/master/image1.png?raw=true)
