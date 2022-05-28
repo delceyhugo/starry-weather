@@ -5,4 +5,4 @@ Pour le design, j'ai utilisé le concept de [Marina Matijaca](https://dribbble.c
   
 Version en live dispo **[ici](https://starryweather.delceyhugo.dev)**
   
-![Exemple](https://github.com/delceyhugo/starry-weather/blob/master/image1.png?raw=true)
+![Exemple](https://github.com/delceyhugo/starry-weather/blob/master/image.png?raw=true)
